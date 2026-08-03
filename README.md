@@ -1,2 +1,12 @@
 # Chintabida_of_sumit
-My personal philosophy_God's ( চিন্তাবিদ ) and thoughts website
+My personal philosophy_God's ( চিন্তাবিদ ) and thoughts website 
+
+তুমি যত সৎ মানুষ হবে,
+তোমার থেকেও বড়ো অসৎ মানুষ জন্ম নেবে।
+
+আর তুমি যত অসৎ হবে,
+তোমার থেকেও বড়ো সৎ মানুষ জন্ম নেবে।
+
+
+একজনের অন্ধকার থেকেই
+অন্যজনের আলো আরও উজ্জ্বল হয়ে ওঠে।
