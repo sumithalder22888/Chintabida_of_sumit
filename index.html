@@ -438,21 +438,248 @@
 
 <hr> 
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বোঝার গতি - চিন্তার গভীরতা</title>
+    <style>
+        /* পুরো পেজের ডিজাইন */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <h1>1.মানুষের বোঝার ক্ষমতা গতিকে গাড়ি বা ট্রেনের গতির সঙ্গে তুলনা যদি করি<h1/>
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-যেমন গাড়ির গতি শুধু “গাড়ি” বললেই নির্ধারিত হয় না—
-ইঞ্জিনের ক্ষমতা, জ্বালানি, রাস্তার অবস্থা, গাড়ির ওজন ইত্যাদির ওপর নির্ভর করে। 
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 32px;
+            padding: 40px 35px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            transition: 0.3s;
+        }
 
-ঠিক তেমনই মানুষের বোঝার গতি শুধু “বুদ্ধিমান না বুদ্ধিমান”—এটার ওপর নির্ভর করে না। 
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+        }
 
-নির্ভর করতে পারে—
-🧠 চিন্তার ধরন
-📚 আগের জ্ঞান ও অভিজ্ঞতা
-🎯 মনোযোগ
-🕐 শেখার অভ্যাস
-🧩 বিষয়টি কতটা পরিচিত
-😴 মানসিক ও শারীরিক অবস্থার ওপর  
+        /* শিরোনাম */
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
 
-তাই তুমি যে কথাটা বলতে চাইছ, সেটা দাঁড়ায়:
-“যেমন একটি গাড়ির গতি তার ইঞ্জিন ও অন্যান্য বিষয়ের ওপর নির্ভর করে, তেমনই একজন মানুষের কোনো বিষয় বুঝতে কত সময় লাগবে, সেটাও তার জ্ঞান, অভিজ্ঞতা, চিন্তার ধরন ও মনোযোগের ওপর নির্ভর করে। তাই একজন যে বিষয় ২ মিনিটে বোঝে, অন্যজন সেটি ১০ মিনিটে বুঝলেও তাকে কম বুদ্ধিমান বলা যায় না।”
+        .subtitle {
+            text-align: center;
+            color: #a78bfa;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed rgba(167, 139, 250, 0.25);
+            padding-bottom: 18px;
+        }
+
+        /* ব্লক */
+        .block {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 18px;
+            padding: 24px 28px;
+            margin-bottom: 22px;
+            border-left: 5px solid #8b5cf6;
+            transition: 0.3s;
+        }
+
+        .block:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-left-color: #c084fc;
+        }
+
+        .block p {
+            color: #e5e7eb;
+            font-size: 18px;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        /* গুরুত্বপূর্ণ লাইনগুলো হাইলাইট */
+        .highlight {
+            color: #fcd34d;
+            font-weight: 500;
+        }
+
+        .highlight-purple {
+            color: #c084fc;
+            font-weight: 500;
+        }
+
+        /* ইমোজি স্টাইল */
+        .emoji-big {
+            font-size: 28px;
+            margin-right: 6px;
+        }
+
+        /* কম্পারিজন বক্স (গাড়ি + মানুষ) */
+        .comparison-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 22px 26px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .comparison-box p {
+            color: #d1d5db;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .comparison-box strong {
+            color: #fbbf24;
+        }
+
+        /* ট্যাগ/লিস্ট স্টাইল */
+        .factor-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 14px;
+        }
+
+        .factor-list li {
+            color: #e5e7eb;
+            font-size: 17px;
+            padding: 8px 0;
+            padding-left: 36px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+            background-size: 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .factor-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ফুটার */
+        .footer-note {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            letter-spacing: 0.3px;
+        }
+
+        .footer-note span {
+            color: #f472b6;
+        }
+
+        /* রেস্পন্সিভ */
+        @media (max-width: 500px) {
+            .card {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .block p {
+                font-size: 16px;
+            }
+
+            .factor-list li {
+                font-size: 15px;
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <h1>🧠 বোঝার গতি</h1>
+        <div class="subtitle">চিন্তার গভীরতা · সময়ের হিসাব · মননের বৈচিত্র্য</div>
+
+        <!-- ব্লক ১: সময়ের পার্থক্য -->
+        <div class="block">
+            <p>
+                <span class="emoji-big">⏳</span>
+                <span class="highlight">"আমার যেটা বুঝতে ৫ মিনিট সময় লাগে,</span><br>
+                সেটা তোমার বুঝতে ২ মিনিটের সময় লাগবে।<br>
+                <span class="highlight-purple">যেটা তোমার পাঁচ মিনিট সময় লাগছে,</span><br>
+                সেটা অন্য কারোর ২ মিনিট সময় লাগবে।<br>
+                <span class="highlight">আবার যেটা তোমার ১০ মিনিট সময় লাগে,</span><br>
+                সেইটা অন্যজনের সেটা ২০ মিনিট সময় লাগতে পারে।"
+            </p>
+        </div>
+
+        <!-- ব্লক ২: সবার আলাদা -->
+        <div class="block">
+            <p>
+                <span class="emoji-big">🌈</span>
+                <strong style="color:#fcd34d;">সবার বোঝার ক্ষমতা, গতি এবং বুদ্ধিমান — এগুলো অনেক আলাদা।</strong>
+            </p>
+        </div>
+
+        <!-- ব্লক ৩: গাড়ির তুলনা -->
+        <div class="comparison-box">
+            <p>
+                <span class="emoji-big">🚗</span>
+                <strong>মানুষের বোঝার ক্ষমতার গতিকে গাড়ি বা ট্রেনের গতির সঙ্গে তুলনা ?</strong>
+            </p>
+            <p style="margin-top: 10px;">
+                যেমন গাড়ির গতি শুধু <strong>"গাড়ি"</strong> বললেই নির্ধারিত হয় না — 
+                <span class="highlight">ইঞ্জিনের ক্ষমতা, জ্বালানি, রাস্তার অবস্থা, গাড়ির ওজন</span> ইত্যাদির ওপর নির্ভর করে।
+            </p>
+            <p style="margin-top: 12px;">
+                ঠিক তেমনই মানুষের বোঝার গতি শুধু <strong>"বুদ্ধিমান না বুদ্ধিমান"</strong> — এটার ওপর নির্ভর করে না।
+            </p>
+        </div>
+
+        <!-- ব্লক ৪: নির্ভরশীল বিষয়গুলো (লিস্ট) -->
+        <div class="block" style="margin-top: 18px;">
+            <p style="font-size:19px; font-weight:500; color:#fcd34d; margin-bottom:4px;">
+                🧩 নির্ভর করতে পারে—
+            </p>
+            <ul class="factor-list">
+                <li>🧠 চিন্তার ধরন</li>
+                <li>📚 আগের জ্ঞান ও অভিজ্ঞতা</li>
+                <li>🎯 মনোযোগ</li>
+                <li>🕐 শেখার অভ্যাস</li>
+                <li>🧩 বিষয়টি কতটা পরিচিত</li>
+                <li>😴 মানসিক ও শারীরিক অবস্থা</li>
+            </ul>
+        </div>
+
+        <!-- ফুটার -->
+        <div class="footer-note">
+            ✦ প্রতিটি মানুষই অনন্য ✦ <br>
+            <span>বোঝার গতি নয়, বোঝার গভীরতাই আসল</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
